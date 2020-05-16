@@ -61,7 +61,7 @@ export default App;
 |          `cycle`          |      boolean     | Enable/disable infinite cycling of slides                                                     |     No     | ``` false ``` |
 |    `currentSlideIndex`    |      number      | Index of image from which the scrolling starts. Same image  is used in the slideshow's preview. |     No     |       0       |
 |          `width`          |      string      | Sets the width of the preview. Examples: '100%', '50vw'                                       |     No     |     '100%'    |
-|          `height`         |      string      | Sets the height of the preview. Examples: '300px', '40%'                                      |     No     |     '50vh'    |
+|          `height`         |      string      | Sets the height of the preview. Examples: '300px', '40%'                                      |     No     |     'auto'    |
 | `thumbnailsToBeDisplayed` |      number      | Number of thumbnails that are visible at a time.                                              |     No     |       8       |
 
 License
