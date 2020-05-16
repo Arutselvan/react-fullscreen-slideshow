@@ -1,9 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-	entry: "./demo/src/index",
+	entry: "./docs/src/index",
 	output: {
-		path: path.join(__dirname, "./demo/build"),
+		path: path.join(__dirname, "./docs/build"),
 		filename: "bundle.js",
 	},
 	resolve: {
@@ -32,7 +32,7 @@ module.exports = {
 	},
 
 	devServer: {
-		contentBase: './demo',
+		contentBase: './docs',
 		publicPath: '/build',
 	},
 

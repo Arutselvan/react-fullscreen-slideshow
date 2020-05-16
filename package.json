@@ -7,8 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "rollup -c",
 		"start": "rollup -c -w",
-		"demo": "webpack-dev-server --config webpack.demo.config.js --mode development --open --hot",
-		"demo-build": "webpack --config webpack.demo.config.js"
+		"docs": "webpack-dev-server --config webpack.docs.config.js --mode development --open --hot",
+		"docs-build": "webpack --config webpack.docs.config.js"
 	},
 	"repository": {
 		"type": "git",
