@@ -1,0 +1,22 @@
+body{
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .container{
+    width: 50vw;
+}
+
+@media(max-width:900px) {
+    .container{
+        width: 95vw;
+    }
+    .title{
+        padding: 5px 20px;
+        font-size: 0.875rem;
+    }
+}
