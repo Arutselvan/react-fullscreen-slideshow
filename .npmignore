@@ -5,3 +5,5 @@ node_modules
 .gitignore
 .git
 tsconfig.json
+.babelrc
+demo
