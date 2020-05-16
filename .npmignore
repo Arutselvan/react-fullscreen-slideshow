@@ -1,0 +1,7 @@
+src
+assets
+node_modules
+*.config.js
+.gitignore
+.git
+tsconfig.json
