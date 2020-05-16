@@ -2,6 +2,8 @@
 
 A simple React image fullscreen slideshow component
 
+[View Demo](http://arutselvan.com/react-fullscreen-slideshow/)
+
 ### Features
 
 - Full screen modal slideshow with thumbnail navigation
