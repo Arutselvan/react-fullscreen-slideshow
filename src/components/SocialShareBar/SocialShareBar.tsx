@@ -12,6 +12,8 @@ import {
     PinterestShareButton
 } from 'react-share';
 
+import './SocialShareBar.scss';
+
 interface SocialShareBarProps {
     url: string;
     media: string;
@@ -25,11 +27,11 @@ export default class ReactModalGallery extends React.Component<SocialShareBarPro
     render() {
         return (
             <div className="gallery-icon-bar">
-                <div className="icon"><FacebookShareButton url={this.url}> <FacebookIcon size={this.iconSize} round /> </FacebookShareButton></div>
-                <div className="icon"><TwitterShareButton url={this.url}> <TwitterIcon size={this.iconSize} round /> </TwitterShareButton></div>
-                <div className="icon"><LinkedinShareButton url={this.url}> <LinkedinIcon size={this.iconSize} round /> </LinkedinShareButton></div>
-                <div className="icon"><WhatsappShareButton url={this.url}> <WhatsappIcon size={this.iconSize} round /> </WhatsappShareButton></div>
-                <div className="icon"><PinterestShareButton url={this.url} media={this.props.media}> <PinterestIcon size={this.iconSize} round /> </PinterestShareButton></div>
+                <div className="share-button"><FacebookShareButton url={this.url}> <FacebookIcon size={this.iconSize} round /> </FacebookShareButton></div>
+                <div className="share-button"><TwitterShareButton url={this.url}> <TwitterIcon size={this.iconSize} round /> </TwitterShareButton></div>
+                <div className="share-button"><LinkedinShareButton url={this.url}> <LinkedinIcon size={this.iconSize} round /> </LinkedinShareButton></div>
+                <div className="share-button"><WhatsappShareButton url={this.url}> <WhatsappIcon size={this.iconSize} round /> </WhatsappShareButton></div>
+                <div className="share-button"><PinterestShareButton url={this.url} media={this.props.media}> <PinterestIcon size={this.iconSize} round /> </PinterestShareButton></div>
             </div>
         );
     }
