@@ -6,7 +6,9 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "rollup -c",
-		"start": "rollup -c -w"
+		"start": "rollup -c -w",
+		"demo": "webpack-dev-server --config webpack.demo.config.js --mode development --open --hot",
+		"demo-build": "webpack --config webpack.demo.config.js"
 	},
 	"repository": {
 		"type": "git",
@@ -19,7 +21,7 @@
 		"react image slideshow",
 		"react image gallery"
 	],
-	"author": {	
+	"author": {
 		"name": "Arut Selvan",
 		"email": "arutselvan710@gmail.com"
 	},
@@ -29,22 +31,38 @@
 		"email": "arutselvan710@gmail.com"
 	},
 	"dependencies": {
-		"@types/react-share": "^3.0.3"
+		"react-share": "^4.1.0",
+		"webpack-dev-server": "^3.11.0"
 	},
 	"homepage": "https://github.com/Arutselvan/react-fullscreen-slideshow#readme",
 	"devDependencies": {
+		"@babel/core": "^7.9.6",
+		"@babel/plugin-proposal-class-properties": "^7.8.3",
+		"@babel/plugin-proposal-object-rest-spread": "^7.9.6",
+		"@babel/preset-env": "^7.9.6",
+		"@babel/preset-react": "^7.9.4",
+		"@babel/preset-typescript": "^7.9.0",
 		"@rollup/plugin-image": "^2.0.5",
 		"@rollup/plugin-node-resolve": "^7.1.3",
 		"@types/react": "^16.9.35",
 		"@types/react-dom": "^16.9.8",
 		"babel-core": "^6.26.3",
+		"babel-loader": "^8.1.0",
 		"babel-runtime": "^6.26.0",
+		"css-loader": "^3.5.3",
+		"file-loader": "^6.0.0",
+		"html-webpack-plugin": "^4.3.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"rollup": "^2.10.0",
 		"rollup-plugin-sass": "^1.2.2",
 		"rollup-plugin-typescript2": "^0.27.1",
-		"typescript": "^3.9.2"
+		"sass": "^1.26.5",
+		"sass-loader": "^8.0.2",
+		"style-loader": "^1.2.1",
+		"typescript": "^3.9.2",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11"
 	},
 	"peerDependencies": {
 		"react": "^16.13.1",
