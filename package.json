@@ -1,6 +1,6 @@
 {
 	"name": "react-fullscreen-slideshow",
-	"version": "1.0.8",
+	"version": "1.0.10",
 	"description": "A React full screen slideshow for images",
 	"main": "dist/index.js",
 	"scripts": {
@@ -31,8 +31,7 @@
 		"email": "arutselvan710@gmail.com"
 	},
 	"dependencies": {
-		"react-share": "^4.1.0",
-		"webpack-dev-server": "^3.11.0"
+		"react-share": "^4.1.0"
 	},
 	"homepage": "https://github.com/Arutselvan/react-fullscreen-slideshow#readme",
 	"devDependencies": {
@@ -62,7 +61,8 @@
 		"style-loader": "^1.2.1",
 		"typescript": "^3.9.2",
 		"webpack": "^4.43.0",
-		"webpack-cli": "^3.3.11"
+		"webpack-cli": "^3.3.11",
+		"webpack-dev-server": "^3.11.0"
 	},
 	"peerDependencies": {
 		"react": "^16.13.1",
