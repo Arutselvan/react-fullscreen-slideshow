@@ -38,7 +38,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 		cycle: false,
 		currentSlideIndex: 0,
 		width: "100%",
-		height: "50vh",
+		height: "auto",
 		thumbnailsToBeDisplayed: 8,
 		maxViewAllThumbnailsPerRow: 4,
 	};
