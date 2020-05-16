@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./styles.scss";
-import * as photosIcon from '../assets/images/photosIcon.png';
-import SocialShareBar from './components/SocialShareBar/SocialShareBar';
+import SocialShareBar from "./components/SocialShareBar/SocialShareBar";
 
 interface image {
 	image: string;
@@ -33,7 +32,7 @@ interface ReactFullscreenSlideshowState {
 export default class ReactFullscreenSlideshow extends React.Component<
 	ReactFullscreenSlideshowProps,
 	ReactFullscreenSlideshowState
-	> {
+> {
 	public static defaultProps = {
 		cycle: false,
 		currentSlideIndex: 0,
@@ -44,6 +43,11 @@ export default class ReactFullscreenSlideshow extends React.Component<
 	};
 
 	public imagesCount: number;
+	public photosIcon =
+		`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABE0lEQVR4Ae3YJVCEURRAYdwLmnApWB+chNYl49ZouPXBrRHRiDv0ntCCV1w
+		PTlt9b1bunfl+l5OfW2lDk12TQAn88fb25gt/TfzgbnLgd1w/9rCj2C6mEWFOoD92oGuOEWNu4AoecKvIHV4tDfRACrKQqUgZzkwK5GYIKtCIhm+1qFGgDvmIxbGpgem4hq
+		6ZQZw9B86aGxiLaSxjSYFFbOPW0kB3eCnkiUScmBTISRIGMabBBAyIxrGpgbm4ha4ZQZTjBUqgBEqgBErgwff5IaLtKXAOQSiEAUUIsKfAeXh+tPznyIESOIowTGINLfCwp8
+		Cx7/96wwde30H2Ffif6kAJjEYrutGlWC+KZQHTRiRQAt8Bc5MAo5hK7K0AAAAASUVORK5CYII=`;
 	constructor(props: ReactFullscreenSlideshowProps) {
 		super(props);
 		this.imagesCount = this.props.images.length;
@@ -298,15 +302,23 @@ export default class ReactFullscreenSlideshow extends React.Component<
 						className='gallery-preview'
 					/>
 					<div className='preview-overlay'>
-						<div className='gallery-title'>
-							{this.props.title}
-						</div>
-						<div className="slideshow-info">
-							<div className="photos-count">
-								<img id="photos-icon" src={photosIcon.default /* Temporary fix*/} alt="photos-icon" />
-								<div id="count">{this.imagesCount + " photos"}</div>
-								<div id="pipe">|</div>
-								<div id="view-slides-link" onClick={() => this.openModal()}>View Slide Show ›</div>
+						<div className='gallery-title'>{this.props.title}</div>
+						<div className='slideshow-info'>
+							<div className='photos-count'>
+								<img
+									id='photos-icon'
+									src={this.photosIcon}
+									alt='photos-icon'
+								/>
+								<div id='count'>
+									{this.imagesCount + " photos"}
+								</div>
+								<div id='pipe'>|</div>
+								<div
+									id='view-slides-link'
+									onClick={() => this.openModal()}>
+									View Slide Show ›
+								</div>
 							</div>
 						</div>
 					</div>
@@ -328,7 +340,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 						<span
 							className='close-text cursor'
 							onClick={() => this.closeModal()}>
-							{'❮ Back to article'}
+							{"❮ Back to article"}
 						</span>
 					</div>
 					<div className='modal-content'>
@@ -373,7 +385,14 @@ export default class ReactFullscreenSlideshow extends React.Component<
 									}
 								</p>
 							</div>
-							<SocialShareBar url={window.location.href} media={this.props.images[this.props.currentSlideIndex!].image} />
+							<SocialShareBar
+								url={window.location.href}
+								media={
+									this.props.images[
+										this.props.currentSlideIndex!
+									].image
+								}
+							/>
 						</div>
 						<div className='modal-bottom'>
 							<div className='thumbnails-list'>
