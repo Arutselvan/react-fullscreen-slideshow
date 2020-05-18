@@ -27,6 +27,8 @@ interface ReactFullscreenSlideshowState {
 	allThumbNails: JSX.Element[] | null;
 	leftArrowDisplay: string;
 	rightArrowDisplay: string;
+	modalFilter: string;
+	modalTransform: string
 }
 
 export default class ReactFullscreenSlideshow extends React.Component<
@@ -59,6 +61,8 @@ export default class ReactFullscreenSlideshow extends React.Component<
 			allThumbNails: null,
 			leftArrowDisplay: "white",
 			rightArrowDisplay: "white",
+			modalFilter: "none",
+			modalTransform: "scale(1.0)"
 		};
 		this.handleKeyDown = this.handleKeyDown.bind(this);
 	}
@@ -73,6 +77,8 @@ export default class ReactFullscreenSlideshow extends React.Component<
 	openViewAllModal() {
 		this.setState({
 			viewAllmodalDisplay: "block",
+			modalFilter: "blur(20px)",
+			modalTransform: "scale(1.1)"
 		});
 	}
 
@@ -87,6 +93,8 @@ export default class ReactFullscreenSlideshow extends React.Component<
 	closeViewAllModal() {
 		this.setState({
 			viewAllmodalDisplay: "none",
+			modalFilter: "none",
+			modalTransform: "scale(1.0)"
 		});
 	}
 
@@ -287,7 +295,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 				<div
 					style={{
 						maxWidth: this.props.width,
-						maxHeight: this.props.height,
+						maxHeight: this.props.height
 					}}
 					className='react-modal-gallery'>
 					<img
@@ -327,7 +335,11 @@ export default class ReactFullscreenSlideshow extends React.Component<
 				<div
 					id='gallery-modal'
 					className='modal'
-					style={{ display: this.state.modalDisplay }}>
+					style={{ 
+						display: this.state.modalDisplay, 
+						filter: this.state.modalFilter,
+						transform: this.state.modalTransform
+						}}>
 					<div className='modal-top'>
 						<span className='modal-gallery-title'>
 							{this.props.title}
