@@ -27,8 +27,7 @@ interface ReactFullscreenSlideshowState {
 	allThumbNails: JSX.Element[] | null;
 	leftArrowDisplay: string;
 	rightArrowDisplay: string;
-	modalFilter: string;
-	modalTransform: string
+	modalClass: string;
 }
 
 export default class ReactFullscreenSlideshow extends React.Component<
@@ -45,8 +44,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 	};
 
 	public imagesCount: number;
-	public photosIcon =
-		`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABE0lEQVR4Ae3YJVCEURRAYdwLmnApWB+chNYl49ZouPXBrRHRiDv0ntCCV1w
+	public photosIcon = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABE0lEQVR4Ae3YJVCEURRAYdwLmnApWB+chNYl49ZouPXBrRHRiDv0ntCCV1w
 		PTlt9b1bunfl+l5OfW2lDk12TQAn88fb25gt/TfzgbnLgd1w/9rCj2C6mEWFOoD92oGuOEWNu4AoecKvIHV4tDfRACrKQqUgZzkwK5GYIKtCIhm+1qFGgDvmIxbGpgem4hq
 		6ZQZw9B86aGxiLaSxjSYFFbOPW0kB3eCnkiUScmBTISRIGMabBBAyIxrGpgbm4ha4ZQZTjBUqgBEqgBErgwff5IaLtKXAOQSiEAUUIsKfAeXh+tPznyIESOIowTGINLfCwp8
 		Cx7/96wwde30H2Ffif6kAJjEYrutGlWC+KZQHTRiRQAt8Bc5MAo5hK7K0AAAAASUVORK5CYII=`;
@@ -61,8 +59,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 			allThumbNails: null,
 			leftArrowDisplay: "white",
 			rightArrowDisplay: "white",
-			modalFilter: "none",
-			modalTransform: "scale(1.0)"
+			modalClass: "modal",
 		};
 		this.handleKeyDown = this.handleKeyDown.bind(this);
 	}
@@ -77,8 +74,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 	openViewAllModal() {
 		this.setState({
 			viewAllmodalDisplay: "block",
-			modalFilter: "blur(20px)",
-			modalTransform: "scale(1.1)"
+			modalClass: "modal-blur",
 		});
 	}
 
@@ -93,8 +89,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 	closeViewAllModal() {
 		this.setState({
 			viewAllmodalDisplay: "none",
-			modalFilter: "none",
-			modalTransform: "scale(1.0)"
+			modalClass: "modal",
 		});
 	}
 
@@ -295,7 +290,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 				<div
 					style={{
 						maxWidth: this.props.width,
-						maxHeight: this.props.height
+						maxHeight: this.props.height,
 					}}
 					className='react-modal-gallery'>
 					<img
@@ -331,126 +326,126 @@ export default class ReactFullscreenSlideshow extends React.Component<
 						</div>
 					</div>
 				</div>
-
 				<div
-					id='gallery-modal'
-					className='modal'
-					style={{ 
-						display: this.state.modalDisplay, 
-						filter: this.state.modalFilter,
-						transform: this.state.modalTransform
-						}}>
-					<div className='modal-top'>
-						<span className='modal-gallery-title'>
-							{this.props.title}
-						</span>
-						<span
-							className='close cursor'
-							onClick={() => this.closeModal()}>
-							&times;
-						</span>
-						<span
-							className='close-text cursor'
-							onClick={() => this.closeModal()}>
-							{"❮ Back to article"}
-						</span>
-					</div>
-					<div className='modal-content'>
-						<div className='slides'>
-							<img
-								src={
-									this.props.images[
-										this.state.currentSlideIndex
-									].image
-								}
-								alt={
-									this.props.images[
-										this.state.currentSlideIndex
-									].caption
-								}
-							/>
+					className='modal-wrapper'
+					style={{
+						display: this.state.modalDisplay,
+					}}>
+					<div id='gallery-modal' className={this.state.modalClass}>
+						<div className='modal-top'>
+							<span className='modal-gallery-title'>
+								{this.props.title}
+							</span>
+							<span
+								className='close cursor'
+								onClick={() => this.closeModal()}>
+								&times;
+							</span>
+							<span
+								className='close-text cursor'
+								onClick={() => this.closeModal()}>
+								{"❮ Back to article"}
+							</span>
 						</div>
-						<button
-							className='prev-mobile'
-							onClick={() => this.prevSlide()}>
-							&#10094;
-						</button>
-						<button
-							className='next-mobile'
-							onClick={() => this.nextSlide()}>
-							&#10095;
-						</button>
-						<div className='caption-container'>
-							<div id='caption'>
-								<p className='image-title'>
-									{
+						<div className='modal-content'>
+							<div className='slides'>
+								<img
+									src={
+										this.props.images[
+											this.state.currentSlideIndex
+										].image
+									}
+									alt={
 										this.props.images[
 											this.state.currentSlideIndex
 										].caption
 									}
-								</p>
-								<p className='desc'>
-									{
+								/>
+							</div>
+							<button
+								className='prev-mobile'
+								onClick={() => this.prevSlide()}>
+								&#10094;
+							</button>
+							<button
+								className='next-mobile'
+								onClick={() => this.nextSlide()}>
+								&#10095;
+							</button>
+							<div className='caption-container'>
+								<div id='caption'>
+									<p className='image-title'>
+										{
+											this.props.images[
+												this.state.currentSlideIndex
+											].caption
+										}
+									</p>
+									<p className='desc'>
+										{
+											this.props.images[
+												this.state.currentSlideIndex
+											].description
+										}
+									</p>
+								</div>
+								<SocialShareBar
+									url={window.location.href}
+									media={
 										this.props.images[
-											this.state.currentSlideIndex
-										].description
+											this.props.currentSlideIndex!
+										].image
 									}
-								</p>
+								/>
 							</div>
-							<SocialShareBar
-								url={window.location.href}
-								media={
-									this.props.images[
-										this.props.currentSlideIndex!
-									].image
-								}
-							/>
-						</div>
-						<div className='modal-bottom'>
-							<div className='thumbnails-list'>
-								{this.state.currentThumbNails}
-							</div>
-							<div
-								onClick={() => this.openViewAllModal()}
-								className='bottom-left-pane'>
-								<div className='view-all-box'>
-									<div className='tile-button'>
-										<div className='tile-row'>
-											<div className='tile-block'></div>
-											<div className='tile-block'></div>
-										</div>
-										<div className='tile-row'>
-											<div className='tile-block'></div>
-											<div className='tile-block'></div>
+							<div className='modal-bottom'>
+								<div className='thumbnails-list'>
+									{this.state.currentThumbNails}
+								</div>
+								<div
+									onClick={() => this.openViewAllModal()}
+									className='bottom-left-pane'>
+									<div className='view-all-box'>
+										<div className='tile-button'>
+											<div className='tile-row'>
+												<div className='tile-block'></div>
+												<div className='tile-block'></div>
+											</div>
+											<div className='tile-row'>
+												<div className='tile-block'></div>
+												<div className='tile-block'></div>
+											</div>
 										</div>
 									</div>
+									<div className='bottom-text'>View All</div>
 								</div>
-								<div className='bottom-text'>View All</div>
-							</div>
 
-							<div className='bottom-right-pane'>
-								<div className='numbertext'>
-									{" "}
-									{this.state.currentSlideIndex + 1} /{" "}
-									{this.imagesCount}
-								</div>
-								<div className='widescreen-arrows'>
-									<button
-										className='prev'
-										style={{
-											color: this.state.leftArrowDisplay,
-										}}
-										onClick={() => this.prevSlide()}>
-										&#10094;
-									</button>
-									<button
-										className='next'
-										style={{
-											color: this.state.rightArrowDisplay,
-										}}
-										onClick={() => this.nextSlide()}>
-										&#10095;
-									</button>
+								<div className='bottom-right-pane'>
+									<div className='numbertext'>
+										{" "}
+										{this.state.currentSlideIndex +
+											1} / {this.imagesCount}
+									</div>
+									<div className='widescreen-arrows'>
+										<button
+											className='prev'
+											style={{
+												color: this.state
+													.leftArrowDisplay,
+											}}
+											onClick={() => this.prevSlide()}>
+											&#10094;
+										</button>
+										<button
+											className='next'
+											style={{
+												color: this.state
+													.rightArrowDisplay,
+											}}
+											onClick={() => this.nextSlide()}>
+											&#10095;
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
