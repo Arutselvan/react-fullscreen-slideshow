@@ -345,7 +345,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 							<span
 								className='close-text cursor'
 								onClick={() => this.closeModal()}>
-								{"❮ Back to article"}
+								{"❮ Back"}
 							</span>
 						</div>
 						<div className='modal-content'>
