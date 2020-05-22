@@ -302,7 +302,8 @@ export default class ReactFullscreenSlideshow extends React.Component<
 							this.props.images[this.props.currentSlideIndex!]
 								.caption
 						}
-						className='gallery-preview'
+						className='gallery-preview'  
+						onClick={() => this.openModal()}
 					/>
 					<div className='preview-overlay'>
 						<div className='gallery-title'>{this.props.title}</div>
