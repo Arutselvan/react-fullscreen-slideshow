@@ -138,7 +138,7 @@
 	justify-content: center;
 	align-items: center;
 	flex: 10 0 65%;
-	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	// border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .slides img {
@@ -410,6 +410,7 @@ img.hover-shadow {
 .gallery-icon-bar {
 	position: absolute;
 	bottom: 0;
+	// right: 5px;
 }
 
 .close-text {
