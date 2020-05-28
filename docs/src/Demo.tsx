@@ -13,7 +13,7 @@ export default class Demo extends React.Component{
                     <h1>react-fullscreen-slideshow</h1>
                 </div>
                 <div className="slideshow">
-                    <ReactFullscreenSlideshow images={GalleryImages} currentSlideIndex={0} title={'Sports Gallery'}/>
+                    <ReactFullscreenSlideshow images={GalleryImages} BannerImgIndex={1} title={'Sports Gallery'}/>
                 </div>
             </div>
         );

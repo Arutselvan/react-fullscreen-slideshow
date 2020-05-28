@@ -13,6 +13,7 @@ interface ReactFullscreenSlideshowProps {
 	title: string;
 	cycle?: boolean;
 	currentSlideIndex?: number;
+	BannerImgIndex?: number;
 	width?: string;
 	height?: string;
 	thumbnailsToBeDisplayed?: number;
@@ -41,6 +42,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 		height: "auto",
 		thumbnailsToBeDisplayed: 8,
 		maxViewAllThumbnailsPerRow: 4,
+		BannerImgIndex: 0
 	};
 
 	public imagesCount: number;
@@ -295,11 +297,11 @@ export default class ReactFullscreenSlideshow extends React.Component<
 					className='react-modal-gallery'>
 					<img
 						src={
-							this.props.images[this.props.currentSlideIndex!]
+							this.props.images[this.props.BannerImgIndex!]
 								.image
 						}
 						alt={
-							this.props.images[this.props.currentSlideIndex!]
+							this.props.images[this.props.BannerImgIndex!]
 								.caption
 						}
 						className='gallery-preview'  
