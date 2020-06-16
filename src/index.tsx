@@ -177,6 +177,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 			() => {
 				this.constructThumbnails();
 				this.constructViewAllThumbnails();
+				this.closeViewAllModal();
 			}
 		);
 	}
