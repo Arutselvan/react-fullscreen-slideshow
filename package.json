@@ -1,6 +1,6 @@
 {
 	"name": "react-fullscreen-slideshow",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"description": "A React full screen slideshow for images",
 	"main": "dist/index.js",
 	"scripts": {
