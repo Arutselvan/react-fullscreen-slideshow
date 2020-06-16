@@ -18,6 +18,8 @@ interface ReactFullscreenSlideshowProps {
 	height?: string;
 	thumbnailsToBeDisplayed?: number;
 	maxViewAllThumbnailsPerRow?: number;
+	displayOverlay?: boolean;
+	displayPreviewBanner?: boolean;
 }
 
 interface ReactFullscreenSlideshowState {
@@ -42,7 +44,9 @@ export default class ReactFullscreenSlideshow extends React.Component<
 		height: "auto",
 		thumbnailsToBeDisplayed: 8,
 		maxViewAllThumbnailsPerRow: 4,
-		BannerImgIndex: 0
+		BannerImgIndex: 0,
+		displayOverlay: true,
+		displayPreviewBanner: true
 	};
 
 	public imagesCount: number;
@@ -294,6 +298,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 					style={{
 						maxWidth: this.props.width,
 						maxHeight: this.props.height,
+						display: this.props.displayPreviewBanner ? "" : "none"
 					}}
 					className='react-modal-gallery'>
 					<img
@@ -308,7 +313,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 						className='gallery-preview'  
 						onClick={() => this.openModal()}
 					/>
-					<div className='preview-overlay'>
+					<div className='preview-overlay' style={{display: this.props.displayOverlay ? "" : "none" }}>
 						<div className='gallery-title'>{this.props.title}</div>
 						<div className='slideshow-info'>
 							<div className='photos-count'>
