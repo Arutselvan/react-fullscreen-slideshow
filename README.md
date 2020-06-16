@@ -61,7 +61,8 @@ export default App;
 |          `images`         | Array of objects | Array of objects containing image, caption and description. (See above example for reference) |     Yes    |       NA      |
 |          `title`          |      string      | Title of the image slideshow                                                                    |     Yes    |       NA      |
 |          `cycle`          |      boolean     | Enable/disable infinite cycling of slides                                                     |     No     | ``` false ``` |
-|    `currentSlideIndex`    |      number      | Index of image from which the scrolling starts. Same image  is used in the slideshow's preview. |     No     |       0       |
+|    `currentSlideIndex`    |      number      | Index of image from which the scrolling starts. |     No     |       0       |
+|    `BannerImgIndex`    |      number      | Index of the image to be used in the preview banner. |     No     |       0       |
 |          `width`          |      string      | Sets the width of the preview. Examples: '100%', '50vw'                                       |     No     |     '100%'    |
 |          `height`         |      string      | Sets the height of the preview. Examples: '300px', '40%'                                      |     No     |     'auto'    |
 | `thumbnailsToBeDisplayed` |      number      | Number of thumbnails that are visible at a time.                                              |     No     |       8       |
