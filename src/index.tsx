@@ -88,6 +88,13 @@ export default class ReactFullscreenSlideshow extends React.Component<
 		this.setState({
 			modalDisplay: "none",
 			currentSlideIndex: this.props.currentSlideIndex as number,
+		},
+		() => {
+			this.constructThumbnails();
+			this.constructViewAllThumbnails();
+			if (!this.props.cycle) {
+				this.trackArrowColor();
+			}
 		});
 		document.body.style.overflow = "auto";
 	}
