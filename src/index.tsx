@@ -65,7 +65,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 			allThumbNails: null,
 			leftArrowDisplay: "white",
 			rightArrowDisplay: "white",
-			modalClass: "modal",
+			modalClass: "react-fullscreen-slideshow-modal",
 		};
 		this.handleKeyDown = this.handleKeyDown.bind(this);
 	}
@@ -80,7 +80,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 	openViewAllModal() {
 		this.setState({
 			viewAllmodalDisplay: "block",
-			modalClass: "modal-blur",
+			modalClass: "react-fullscreen-slideshow-modal-blur",
 		});
 	}
 
@@ -95,7 +95,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 	closeViewAllModal() {
 		this.setState({
 			viewAllmodalDisplay: "none",
-			modalClass: "modal",
+			modalClass: "react-fullscreen-slideshow-modal",
 		});
 	}
 
@@ -300,7 +300,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 						maxHeight: this.props.height,
 						display: this.props.displayPreviewBanner ? "" : "none"
 					}}
-					className='react-modal-gallery'>
+					className='react-fullscreen-slideshow-modal-gallery'>
 					<img
 						src={
 							this.props.images[this.props.BannerImgIndex!]
@@ -310,24 +310,24 @@ export default class ReactFullscreenSlideshow extends React.Component<
 							this.props.images[this.props.BannerImgIndex!]
 								.caption
 						}
-						className='gallery-preview'  
+						className='react-fullscreen-slideshow-gallery-preview'  
 						onClick={() => this.openModal()}
 					/>
-					<div className='preview-overlay' style={{display: this.props.displayOverlay ? "" : "none" }}>
-						<div className='gallery-title'>{this.props.title}</div>
-						<div className='slideshow-info'>
-							<div className='photos-count'>
+					<div className='react-fullscreen-slideshow-preview-overlay' style={{display: this.props.displayOverlay ? "" : "none" }}>
+						<div className='react-fullscreen-slideshow-gallery-title'>{this.props.title}</div>
+						<div className='react-fullscreen-slideshow-slideshow-info'>
+							<div className='react-fullscreen-slideshow-photos-count'>
 								<img
-									id='photos-icon'
+									id='react-fullscreen-slideshow-photos-icon'
 									src={this.photosIcon}
 									alt='photos-icon'
 								/>
-								<div id='count'>
+								<div id='react-fullscreen-slideshow-count'>
 									{this.imagesCount + " photos"}
 								</div>
-								<div id='pipe'>|</div>
+								<div id='react-fullscreen-slideshow-pipe'>|</div>
 								<div
-									id='view-slides-link'
+									id='react-fullscreen-slideshow-view-slides-link'
 									onClick={() => this.openModal()}>
 									View Slide Show ›
 								</div>
@@ -336,28 +336,28 @@ export default class ReactFullscreenSlideshow extends React.Component<
 					</div>
 				</div>
 				<div
-					className='modal-wrapper'
+					className='react-fullscreen-slideshow-modal-wrapper'
 					style={{
 						display: this.state.modalDisplay,
 					}}>
-					<div id='gallery-modal' className={this.state.modalClass}>
-						<div className='modal-top'>
-							<span className='modal-gallery-title'>
+					<div id='react-fullscreen-slideshow-gallery-modal' className={this.state.modalClass}>
+						<div className='react-fullscreen-slideshow-modal-top'>
+							<span className='react-fullscreen-slideshow-modal-gallery-title'>
 								{this.props.title}
 							</span>
 							<span
-								className='close cursor'
+								className='react-fullscreen-slideshow-close cursor'
 								onClick={() => this.closeModal()}>
 								&times;
 							</span>
 							<span
-								className='close-text cursor'
+								className='react-fullscreen-slideshow-close-text cursor'
 								onClick={() => this.closeModal()}>
 								{"❮ Back"}
 							</span>
 						</div>
-						<div className='modal-content'>
-							<div className='slides'>
+						<div className='react-fullscreen-slideshow-modal-content'>
+							<div className='react-fullscreen-slideshow-slides'>
 								<img
 									src={
 										this.props.images[
@@ -372,25 +372,25 @@ export default class ReactFullscreenSlideshow extends React.Component<
 								/>
 							</div>
 							<button
-								className='prev-mobile'
+								className='react-fullscreen-slideshow-prev-mobile'
 								onClick={() => this.prevSlide()}>
 								&#10094;
 							</button>
 							<button
-								className='next-mobile'
+								className='react-fullscreen-slideshow-next-mobile'
 								onClick={() => this.nextSlide()}>
 								&#10095;
 							</button>
-							<div className='caption-container'>
-								<div id='caption'>
-									<p className='image-title'>
+							<div className='react-fullscreen-slideshow-caption-container'>
+								<div id='react-fullscreen-slideshow-caption'>
+									<p className='react-fullscreen-slideshow-image-title'>
 										{
 											this.props.images[
 												this.state.currentSlideIndex
 											].caption
 										}
 									</p>
-									<p className='desc'>
+									<p className='react-fullscreen-slideshow-desc'>
 										{
 											this.props.images[
 												this.state.currentSlideIndex
@@ -407,37 +407,37 @@ export default class ReactFullscreenSlideshow extends React.Component<
 									}
 								/>
 							</div>
-							<div className='modal-bottom'>
-								<div className='thumbnails-list'>
+							<div className='react-fullscreen-slideshow-modal-bottom'>
+								<div className='react-fullscreen-slideshow-thumbnails-list'>
 									{this.state.currentThumbNails}
 								</div>
 								<div
 									onClick={() => this.openViewAllModal()}
-									className='bottom-left-pane'>
-									<div className='view-all-box'>
-										<div className='tile-button'>
-											<div className='tile-row'>
-												<div className='tile-block'></div>
-												<div className='tile-block'></div>
+									className='react-fullscreen-slideshow-bottom-left-pane'>
+									<div className='react-fullscreen-slideshow-view-all-box'>
+										<div className='react-fullscreen-slideshow-tile-button'>
+											<div className='react-fullscreen-slideshow-tile-row'>
+												<div className='react-fullscreen-slideshow-tile-block'></div>
+												<div className='react-fullscreen-slideshow-tile-block'></div>
 											</div>
-											<div className='tile-row'>
-												<div className='tile-block'></div>
-												<div className='tile-block'></div>
+											<div className='react-fullscreen-slideshow-tile-row'>
+												<div className='react-fullscreen-slideshow-tile-block'></div>
+												<div className='react-fullscreen-slideshow-tile-block'></div>
 											</div>
 										</div>
 									</div>
-									<div className='bottom-text'>View All</div>
+									<div className='react-fullscreen-slideshow-bottom-text'>View All</div>
 								</div>
 
-								<div className='bottom-right-pane'>
-									<div className='numbertext'>
+								<div className='react-fullscreen-slideshow-bottom-right-pane'>
+									<div className='react-fullscreen-slideshow-numbertext'>
 										{" "}
 										{this.state.currentSlideIndex +
 											1} / {this.imagesCount}
 									</div>
-									<div className='widescreen-arrows'>
+									<div className='react-fullscreen-slideshow-widescreen-arrows'>
 										<button
-											className='prev'
+											className='react-fullscreen-slideshow-prev'
 											style={{
 												color: this.state
 													.leftArrowDisplay,
@@ -446,7 +446,7 @@ export default class ReactFullscreenSlideshow extends React.Component<
 											&#10094;
 										</button>
 										<button
-											className='next'
+											className='react-fullscreen-slideshow-next'
 											style={{
 												color: this.state
 													.rightArrowDisplay,
@@ -462,20 +462,20 @@ export default class ReactFullscreenSlideshow extends React.Component<
 				</div>
 
 				<div
-					id='va-modal'
-					className='view-all-modal'
+					id='react-fullscreen-slideshow-va-modal'
+					className='react-fullscreen-slideshow-view-all-modal'
 					style={{ display: this.state.viewAllmodalDisplay }}>
 					<span
-						className='close cursor close-view-all'
+						className='react-fullscreen-slideshow-close cursor react-fullscreen-slideshow-close-view-all'
 						onClick={() => this.closeViewAllModal()}>
 						&times;
 					</span>
-					<div className='view-all-modal-content'>
-						<div className='view-all-gallery-name normal-text'>
+					<div className='react-fullscreen-slideshow-view-all-modal-content'>
+						<div className='react-fullscreen-slideshow-view-all-gallery-name react-fullscreen-slideshow-normal-text'>
 							{this.props.title}
 						</div>
-						<div className='thumbnail-grid'>
-							<div className='view-all-thumbnails'>
+						<div className='react-fullscreen-slideshow-thumbnail-grid'>
+							<div className='react-fullscreen-slideshow-view-all-thumbnails'>
 								{this.state.allThumbNails}
 							</div>
 						</div>

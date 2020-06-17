@@ -1,4 +1,4 @@
-.react-modal-gallery {
+.react-fullscreen-slideshow-modal-gallery {
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -7,19 +7,19 @@
 	margin: auto;
 }
 
-.preview-bottom-text {
+.react-fullscreen-slideshow-preview-bottom-text {
 	position: absolute;
 	left: 50px;
 	color: white;
 }
 
-.preview-overlay {
+.react-fullscreen-slideshow-preview-overlay {
 	position: absolute;
 	bottom: 0;
 	width: 95%;
 }
 
-.preview-bottom-pane {
+.react-fullscreen-slideshow-preview-bottom-pane {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -27,18 +27,18 @@
 	width: 100%;
 }
 
-.photos-box-icon {
+.react-fullscreen-slideshow-photos-box-icon {
 	position: absolute;
 	left: 15px;
 }
 
-.react-modal-gallery img {
+.react-fullscreen-slideshow-modal-gallery img {
 	max-width: 100%;
 	max-height: inherit;
 	cursor: pointer;
 }
 
-.modal-wrapper {
+.react-fullscreen-slideshow-modal-wrapper {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -49,14 +49,14 @@
 	background-color: black;
 }
 
-.modal {
+.react-fullscreen-slideshow-modal {
 	width: 100%;
 	height: 100%;
 	background-color: #121212;
 	overflow-y: hidden;
 }
 
-.modal-blur {
+.react-fullscreen-slideshow-modal-blur {
 	width: 100%;
 	height: 100%;
 	background-color: rgb(18, 18, 18);
@@ -64,7 +64,7 @@
 	filter: blur(30px);
 }
 
-.modal-content {
+.react-fullscreen-slideshow-modal-content {
 	margin: auto;
 	padding: 0;
 	height: 75%;
@@ -74,7 +74,7 @@
 	background-color: #121212;
 }
 
-.modal-top {
+.react-fullscreen-slideshow-modal-top {
 	border-bottom: 3px solid rgba(255, 255, 255, 0.1);
 	height: 10%;
 	width: 100%;
@@ -83,7 +83,7 @@
 	align-items: center;
 }
 
-.modal-bottom {
+.react-fullscreen-slideshow-modal-bottom {
 	border-top: 3px solid rgba(255, 255, 255, 0.1);
 	min-height: 15vh;
 	width: 100%;
@@ -94,7 +94,7 @@
 	align-items: center;
 }
 
-.close {
+.react-fullscreen-slideshow-close {
 	color: white;
 	position: absolute;
 	left: 25px;
@@ -103,7 +103,7 @@
 	display: none;
 }
 
-.close-view-all {
+.react-fullscreen-slideshow-close-view-all {
 	position: absolute;
 	right: 25px;
 	top: 20px;
@@ -112,25 +112,25 @@
 	display: block;
 }
 
-.close:hover,
-.close:focus,
-.close-text:hover,
-.close-text:focus,
-#view-slides-link:hover,
-#view-slides-link:focus {
+.react-fullscreen-slideshow-close:hover,
+.react-fullscreen-slideshow-close:focus,
+.react-fullscreen-slideshow-close-text:hover,
+.react-fullscreen-slideshow-close-text:focus,
+#react-fullscreen-slideshow-view-slides-link:hover,
+#react-fullscreen-slideshow-view-slides-link:focus {
 	color: #999;
 	text-decoration: none;
 	cursor: pointer;
 }
 
-.view-all-thumbnails img {
+.react-fullscreen-slideshow-view-all-thumbnails img {
 	margin: 2px;
 	/* max-width: 9vw; */
 	max-height: 8vh;
 	background: rgba(0, 0, 0, 0.5);
 }
 
-.slides {
+.react-fullscreen-slideshow-slides {
 	height: 100%;
 	display: flex;
 	margin-top: 0;
@@ -141,12 +141,12 @@
 	// border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.slides img {
+.react-fullscreen-slideshow-slides img {
 	max-width: 100%;
 	max-height: 100%;
 }
 
-.view-all-modal-content {
+.react-fullscreen-slideshow-view-all-modal-content {
 	height: 100%;
 	width: 75%;
 	display: flex;
@@ -156,7 +156,7 @@
 	flex-flow: column;
 }
 
-.view-all-gallery-name {
+.react-fullscreen-slideshow-view-all-gallery-name {
 	color: white;
 	width: 100%;
 	text-align: center;
@@ -164,7 +164,7 @@
 	margin-bottom: 20px;
 }
 
-.view-all-thumbnails {
+.react-fullscreen-slideshow-view-all-thumbnails {
 	width: 75%;
 	max-height: 75vh;
 	display: flex;
@@ -177,12 +177,12 @@
 	-ms-overflow-style: none;
 }
 
-.view-all-thumbnails::-webkit-scrollbar {
+.react-fullscreen-slideshow-view-all-thumbnails::-webkit-scrollbar {
 	width: 0;
 	height: 0;
 }
 
-.view-all-modal {
+.react-fullscreen-slideshow-view-all-modal {
 	display: none;
 	position: fixed;
 	z-index: 2;
@@ -196,8 +196,8 @@
 	overflow-y: hidden;
 }
 
-.prev-mobile,
-.next-mobile {
+.react-fullscreen-slideshow-prev-mobile,
+.react-fullscreen-slideshow-next-mobile {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
@@ -216,8 +216,8 @@
 	display: none;
 }
 
-.prev,
-.next {
+.react-fullscreen-slideshow-prev,
+.react-fullscreen-slideshow-next {
 	cursor: pointer;
 	width: auto;
 	padding: 12px;
@@ -231,23 +231,23 @@
 	outline: none;
 }
 
-.next-mobile {
+.react-fullscreen-slideshow-next-mobile {
 	right: 0;
 	border-radius: 3px 0 0 3px;
 }
 
-.prev:hover,
-.next:hover {
+.react-fullscreen-slideshow-prev:hover,
+.react-fullscreen-slideshow-next:hover {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.bottom-right-pane {
+.react-fullscreen-slideshow-bottom-right-pane {
 	position: absolute;
 	right: 30px;
 	display: flex;
 }
 
-.bottom-left-pane {
+.react-fullscreen-slideshow-bottom-left-pane {
 	cursor: pointer;
 	position: absolute;
 	left: 30px;
@@ -256,14 +256,14 @@
 	align-items: center;
 }
 
-.bottom-text {
+.react-fullscreen-slideshow-bottom-text {
 	width: auto;
 	padding: 0 5px;
 	color: white !important;
 	font-size: 16px;
 }
 
-.tile-button {
+.react-fullscreen-slideshow-tile-button {
 	position: relative;
 	background-color: transparent;
 	padding: 5px;
@@ -273,7 +273,7 @@
 	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.6, 1) 0.3s;
 }
 
-.modal-gallery-title {
+.react-fullscreen-slideshow-modal-gallery-title {
 	color: white;
 	font-size: 16px;
 	font-weight: bolder;
@@ -281,7 +281,7 @@
 	text-align: center;
 }
 
-.gallery-title {
+.react-fullscreen-slideshow-gallery-title {
 	color: white;
 	padding: 2vh 0;
 	border-bottom: 0.25px solid gray;
@@ -289,12 +289,12 @@
 	font-weight: bolder;
 }
 
-.tile-row {
+.react-fullscreen-slideshow-tile-row {
 	height: 10px;
 	width: 100%;
 }
 
-.tile-block {
+.react-fullscreen-slideshow-tile-block {
 	transition: background-color 0.3s;
 	display: inline-block;
 	vertical-align: top;
@@ -304,7 +304,7 @@
 	margin: 1px;
 }
 
-.numbertext {
+.react-fullscreen-slideshow-numbertext {
 	width: auto;
 	padding: 0 5px;
 	color: #f2f2f2;
@@ -314,7 +314,7 @@
 	align-items: center;
 }
 
-.caption-container {
+.react-fullscreen-slideshow-caption-container {
 	text-align: left;
 	background-color: #121212;
 	color: white;
@@ -327,49 +327,32 @@
 	bottom: 0;
 }
 
-#caption {
+#react-fullscreen-slideshow-caption {
 	margin: 0 auto;
 	min-width: 300px;
 	max-height: 90%;
 	overflow-y: auto;
 }
 
-.image-title {
+.react-fullscreen-slideshow-image-title {
 	font-weight: bolder;
 }
 
-.desc {
+.react-fullscreen-slideshow-desc {
 	font-weight: normal;
 	color: grey;
 }
 
-img.demo {
-	opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-	opacity: 1;
-}
-
-img.hover-shadow {
-	transition: 0.3s;
-}
-
-.hover-shadow:hover {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.thumbnails-list {
+.react-fullscreen-slideshow-thumbnails-list {
 	display: flex;
 	flex-wrap: nowrap;
 }
 
-.slideshow-info {
+.react-fullscreen-slideshow-slideshow-info {
 	padding: 2vh 0;
 }
 
-#photos-icon {
+#react-fullscreen-slideshow-photos-icon {
 	width: 30px;
 	height: 25px;
 	display: inline-block;
@@ -381,7 +364,7 @@ img.hover-shadow {
     line-height: 0.9375rem; */
 }
 
-#count {
+#react-fullscreen-slideshow-count {
 	color: white;
 	display: inline-block;
 	font-size: 0.8125rem;
@@ -389,7 +372,7 @@ img.hover-shadow {
 	vertical-align: middle;
 }
 
-#view-slides-link {
+#react-fullscreen-slideshow-view-slides-link {
 	display: inline-block;
 	color: white;
 	font-size: 0.8125rem;
@@ -398,7 +381,7 @@ img.hover-shadow {
 	vertical-align: middle;
 }
 
-#pipe {
+#react-fullscreen-slideshow-pipe {
 	display: inline-block;
 	color: white;
 	margin: 0 20px;
@@ -407,13 +390,13 @@ img.hover-shadow {
 	vertical-align: middle;
 }
 
-.gallery-icon-bar {
+.react-fullscreen-slideshow-gallery-icon-bar {
 	position: absolute;
 	bottom: 0;
 	// right: 5px;
 }
 
-.close-text {
+.react-fullscreen-slideshow-close-text {
 	color: white;
 	position: absolute;
 	left: 25px;
@@ -422,65 +405,65 @@ img.hover-shadow {
 }
 
 @media (max-width: 960px) {
-	#caption {
+	#react-fullscreen-slideshow-caption {
 		min-width: 90vw;
 	}
-	.gallery-icon-bar {
+	.react-fullscreen-slideshow-gallery-icon-bar {
 		display: none;
 	}
-	.gallery-title {
+	.react-fullscreen-slideshow-gallery-title {
 		font-size: 14px;
 		padding: 2vh;
 	}
-	.slides {
+	.react-fullscreen-slideshow-slides {
 		border: none;
 	}
-	#caption {
+	#react-fullscreen-slideshow-caption {
 		/* padding-top: 20px; */
 		max-width: 90vw;
 		text-align: center;
 		font-size: 12px;
 		line-height: normal;
 	}
-	.caption-container {
+	.react-fullscreen-slideshow-caption-container {
 		margin: 0;
 		height: 100px;
 	}
-	.modal-content {
+	.react-fullscreen-slideshow-modal-content {
 		height: 60%;
 	}
-	.modal-bottom {
+	.react-fullscreen-slideshow-modal-bottom {
 		min-height: 12vh;
 		bottom: 0;
 		position: fixed;
 	}
-	.thumbnails-list {
+	.react-fullscreen-slideshow-thumbnails-list {
 		display: none;
 	}
-	.widescreen-arrows {
+	.react-fullscreen-slideshow-widescreen-arrows {
 		display: none;
 	}
-	.bottom-left-pane {
+	.react-fullscreen-slideshow-bottom-left-pane {
 		left: 0;
 		right: 0;
 	}
-	.prev-mobile,
-	.next-mobile {
+	.react-fullscreen-slideshow-prev-mobile,
+	.react-fullscreen-slideshow-next-mobile {
 		display: block;
 	}
-	.view-all-gallery-name {
+	.react-fullscreen-slideshow-view-all-gallery-name {
 		font-size: 12px;
 	}
-	.modal-gallery-title {
+	.react-fullscreen-slideshow-modal-gallery-title {
 		font-size: 2.125vw;
 	}
-	.close {
+	.react-fullscreen-slideshow-close {
 		display: block;
 	}
-	.close-text {
+	.react-fullscreen-slideshow-close-text {
 		display: none;
 	}
-	.slideshow-info {
+	.react-fullscreen-slideshow-slideshow-info {
 		padding: 2vw;
 	}
 }
