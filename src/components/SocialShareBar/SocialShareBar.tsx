@@ -26,7 +26,7 @@ export default class ReactModalGallery extends React.Component<SocialShareBarPro
 
     render() {
         return (
-            <div className="gallery-icon-bar">
+            <div className="react-fullscreen-slideshow-gallery-icon-bar">
                 <div className="share-button"><FacebookShareButton url={this.url}> <FacebookIcon size={this.iconSize} round /> </FacebookShareButton></div>
                 <div className="share-button"><TwitterShareButton url={this.url}> <TwitterIcon size={this.iconSize} round /> </TwitterShareButton></div>
                 <div className="share-button"><LinkedinShareButton url={this.url}> <LinkedinIcon size={this.iconSize} round /> </LinkedinShareButton></div>
