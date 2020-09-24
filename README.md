@@ -2,6 +2,11 @@
 
 A simple React image fullscreen slideshow component
 
+
+![Capture](https://user-images.githubusercontent.com/18646185/94140600-18e72e80-fe89-11ea-9d0f-45516199554e.PNG)
+
+
+
 [View Demo](http://arutselvan.com/react-fullscreen-slideshow/)
 
 ### Features
