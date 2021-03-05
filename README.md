@@ -7,7 +7,7 @@ A simple React image fullscreen slideshow component
 
 
 
-[View Demo](http://arutselvan.com/react-fullscreen-slideshow/)
+[View Demo](http://arutselvan.github.io/react-fullscreen-slideshow/)
 
 ### Features
 
